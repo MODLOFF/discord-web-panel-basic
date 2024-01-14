@@ -1,5 +1,5 @@
 
-# Basic Discord Web Panel
+# Basic Discord Web Panel V14
 
 Basit bir şekilde web panel üzerinden komut eklemenizi sağlayan öğretici bir bot.
 
