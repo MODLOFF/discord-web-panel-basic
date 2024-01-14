@@ -1,0 +1,21 @@
+{
+    "name": "basic-web-panel",
+    "version": "1.0.0",
+    "description": "discord botu için basit bir web panel",
+    "main": "bot.js",
+    "scripts": {
+        "start": "node bot.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "discord.js": "^14.14.1",
+        "express": "^4.17.1",
+        "mongoose": "^6.0.14"
+    },
+    "engines": {
+        "node": ">=16.6.0"
+    },
+    "author": "MODLOFF",
+    "license": "MIT",
+    "private": true
+}

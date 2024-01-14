@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord Bot Web Paneli</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #007bff;
+    }
+
+    .form-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    form {
+      flex: 1;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      margin-top: 10px;
+      color: #495057;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .sil-form {
+      flex: 1;
+      margin-top: 20px;
+      border-top: 1px solid #dee2e6;
+      padding-top: 20px;
+    }
+
+    .btn-sil {
+      background-color: #dc3545;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-sil:hover {
+      background-color: #c82333;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="text-center">Discord Bot Web Paneli</h1>
+  
+  <div class="form-container">
+    <form action="/komut-ekle" method="post">
+      <div class="mb-3">
+        <label for="komut" class="form-label">Komut:</label>
+        <input type="text" id="komut" name="komut" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="yanit" class="form-label">Yanıt:</label>
+        <textarea id="yanit" name="yanit" class="form-control" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Komut Ekle</button>
+    </form>
+    
+    <div class="sil-form">
+      <h2>Komut Sil</h2>
+      <form action="/komut-sil" method="post">
+        <div class="mb-3">
+          <label for="sil-komut" class="form-label">Silinecek Komut:</label>
+          <input type="text" id="sil-komut" name="silKomut" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-sil">Komut Sil</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
