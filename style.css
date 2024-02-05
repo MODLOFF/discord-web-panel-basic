@@ -1,0 +1,72 @@
+body {
+    padding: 20px;
+    background-color: #4D7A8C;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+
+  .form-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  form {
+    flex: 1;
+    background-color: #4D7A8C;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    margin-top: 10px;
+    color: #495057;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #4D7A8C;
+    border-radius: 4px;
+  }
+
+  button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #218838;
+  }
+
+  .sil-form {
+    flex: 1;
+    margin-top: 20px;
+    border-top: 1px solid #dee2e6;
+    padding-top: 20px;
+  }
+
+  .btn-sil {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .btn-sil:hover {
+    background-color: #c82333;
+  }

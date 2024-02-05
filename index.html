@@ -8,7 +8,8 @@
   <style>
     body {
       padding: 20px;
-      background-color: #f8f9fa;
+      background-color: #040D01;
+      color: #fff;
     }
 
     h1 {
@@ -18,21 +19,21 @@
 
     .form-container {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
       gap: 20px;
     }
 
     form {
       flex: 1;
-      background-color: #fff;
       padding: 20px;
+      background-color: #4D7A8C;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     label {
       margin-top: 10px;
-      color: #495057;
+      color: #fff;
     }
 
     input,
@@ -42,7 +43,7 @@
       margin-top: 5px;
       margin-bottom: 10px;
       box-sizing: border-box;
-      border: 1px solid #ced4da;
+      border: 1px solid #559BD9;
       border-radius: 4px;
     }
 
@@ -59,52 +60,67 @@
       background-color: #218838;
     }
 
-    .sil-form {
-      flex: 1;
-      margin-top: 20px;
-      border-top: 1px solid #dee2e6;
-      padding-top: 20px;
-    }
-
     .btn-sil {
       background-color: #dc3545;
       color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
     }
 
     .btn-sil:hover {
       background-color: #c82333;
     }
+
+    .otorol-form {
+      flex: 1;
+      padding-top: 20px;
+    }
   </style>
 </head>
 <body>
-  <h1 class="text-center">Discord Bot Web Paneli</h1>
-  
-  <div class="form-container">
-    <form action="/komut-ekle" method="post">
-      <div class="mb-3">
-        <label for="komut" class="form-label">Komut:</label>
-        <input type="text" id="komut" name="komut" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label for="yanit" class="form-label">Yanıt:</label>
-        <textarea id="yanit" name="yanit" class="form-control" rows="4" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-success">Komut Ekle</button>
-    </form>
-    
-    <div class="sil-form">
-      <h2>Komut Sil</h2>
-      <form action="/komut-sil" method="post">
+  <div class="container">
+    <h1 class="text-center">Discord Bot Web Paneli</h1>
+    <h2>Komut Ekle</h2>
+    <div class="form-container">
+      <form action="/komut-ekle" method="post">
         <div class="mb-3">
-          <label for="sil-komut" class="form-label">Silinecek Komut:</label>
-          <input type="text" id="sil-komut" name="silKomut" class="form-control" required>
+          <label for="komut" class="form-label">Komut:</label>
+          <input type="text" id="komut" name="komut" class="form-control" required>
         </div>
-        <button type="submit" class="btn btn-sil">Komut Sil</button>
+        <div class="mb-3">
+          <label for="yanit" class="form-label">Yanıt:</label>
+          <textarea id="yanit" name="yanit" class="form-control" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Komut Ekle</button>
       </form>
+
+      <div class="sil-form">
+        <h2>Komut Sil</h2>
+        <form action="/komut-sil" method="post">
+          <div class="mb-3">
+            <label for="sil-komut" class="form-label">Silinecek Komut:</label>
+            <input type="text" id="sil-komut" name="silKomut" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-sil">Komut Sil</button>
+        </form>
+      </div>
+
+      <div class="otorol-form">
+        <h2>Otorol Ayarla</h2>
+        <form action="/otorol-ayarla" method="post">
+          <div class="mb-3">
+            <label for="guild-id" class="form-label">Sunucu ID:</label>
+            <input type="text" id="guild-id" name="guildId" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="rol-id" class="form-label">Rol ID:</label>
+            <input type="text" id="rol-id" name="rolId" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="kanal-id" class="form-label">Kanal ID:</label>
+            <input type="text" id="kanal-id" name="kanalId" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-success">Otorol Ayarla</button>
+        </form>
+      </div>
     </div>
   </div>
 

@@ -43,6 +43,12 @@ const Komut = mongoose.model("Komut", {
   yanit: String,
 });
 
+const Otorol = mongoose.model("Otorol", {
+  guildId: String,
+  rolId: String,
+  kanalId: String,
+});
+
 client.on("ready", () => {
   console.log(`Bot ${client.user.tag} olarak aktif!`);
 });
@@ -97,6 +103,55 @@ app.post("/komut-sil", async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).send("Bir hata oluştu.");
+  }
+});
+
+app.use("/channels/me", (req, res) => {
+  // `/channels/me` adresine gelen istekleri başka bir sayfaya yönlendir
+  res.redirect("/");
+});
+
+
+app.post("/otorol-ayarla", async (req, res) => {
+  const { guildId, rolId, kanalId } = req.body;
+
+  try {
+    // İlgili sunucu için otorol ayarını güncelle veya oluştur
+    await Otorol.findOneAndUpdate({ guildId }, { rolId, kanalId }, { upsert: true });
+
+    res.send("Otorol başarıyla ayarlandı!");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Bir hata oluştu.");
+  }
+});
+
+client.on("guildMemberAdd", async (member) => {
+  const existingOtorol = await Otorol.findOne({ guildId: member.guild.id });
+
+  if (existingOtorol) {
+    const rol = member.guild.roles.cache.get(existingOtorol.rolId);
+    const kanal = member.guild.channels.cache.get(existingOtorol.kanalId);
+
+    if (rol && kanal) {
+      try {
+        await member.roles.add(rol);
+        const embed = {
+          color: 0x00ff00,
+          title: `Hoş Geldin!`,
+          description: `${member.user.username}, sunucumuza hoş geldin!`,
+          fields: [
+            {
+              name: "Rol Verildi",
+              value: `Seni ${rol} rolü ile ödüllendirdik!`,
+            },
+          ],
+        };
+        kanal.send({ embeds: [embed] });
+      } catch (error) {
+        console.error(error);
+      }
+    }
   }
 });
 
