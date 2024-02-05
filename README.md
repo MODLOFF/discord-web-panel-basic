@@ -3,7 +3,8 @@
 
 Basit bir şekilde web panel üzerinden komut eklemenizi sağlayan öğretici bir bot.
 
-
+## Eklenenler
+Otorol Eklendi
 
 ## Kurulum
 
